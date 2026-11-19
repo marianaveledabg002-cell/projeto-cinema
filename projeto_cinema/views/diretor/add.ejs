@@ -1,0 +1,20 @@
+<%- include('../cabecalho')%>
+
+<div>
+    <h3>Novo Diretor</h3>
+    <form action="/diretor/add" method="POST">
+        <p>Nome</p>
+        <input type="text" placeholder="Nome do Diretor" name="nome">
+
+        <p>Nascimento</p>
+        <input type="number" value="2026" name="nascimento">
+
+        <p>Filmes dirigidos</p>
+        <input type="text" placeholder="Filmes dirigidos..." name="filmes">
+        <br><br>
+        <button type="submit">Adicionar</button>
+        <button type="reset" onclick="window.history.back()">Cancelar</button>
+    </form>
+</div>
+</body>
+</html>

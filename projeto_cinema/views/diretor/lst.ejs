@@ -1,0 +1,49 @@
+<%- include('../cabecalho')%>
+
+    <div>
+        <h3>Diretores de Cinema</h3>
+        <p>Conheça os diretores responsáveis por grandes filmes da história do cinema</p>
+        <a href="/diretor/add">+ Novo Diretor</a><br><br>
+
+        <form action="/diretor/pesquisa" method="POST">
+    <input type="text" name="pesquisar" placeholder="Pesquisar diretor...">
+    <button type="submit">Pesquisar</button>
+    <button href="/diretor">Limpar pesquisa</button>
+</form>
+        <table>
+            <tr>
+                <td>
+                    <h3>Nome</h3>
+                </td>
+                <td>
+                    <h3>Nascimento</h3>
+                </td>
+                <td>
+                    <h3>Filmes dirigidos</h3>
+                </td>
+                 <td>
+                    <h3>Ações</h3>
+                </td>
+            </tr>
+            <% diretores.forEach(diretor=>{%>
+                <tr>
+                    <td>
+                        <%=diretor.nome%>
+                    </td>
+                    <td>
+                        <%=diretor.nascimento%>
+                    </td>
+                    <td>
+                        <%=diretor.filmes%>
+                    </td>
+                    <td>
+                        <a href="/diretor/upd/<%=diretor.id%>">✏️</a>
+                        <a href="/diretor/del/<%=diretor.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    </body>
+
+    </html>

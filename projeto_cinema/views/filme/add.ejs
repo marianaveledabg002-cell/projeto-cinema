@@ -1,0 +1,49 @@
+<%- include('../cabecalho')%>
+
+    <div>
+        <h3>Novo Filme</h3>
+        <form action="/filme/add" method="POST" enctype="multipart/form-data">
+            <p>Nome</p>
+            <input type="text" placeholder="Nome do filme..." name="nome">
+
+            <p>Gênero</p>
+            <select name="genero">
+                <option value="">Selecione...</option>
+                <option value="Ação">Ação</option>
+                <option value="Comédia">Comédia</option>
+                <option value="Drama">Drama</option>
+                <option value="Terror">Terror</option>
+                <option value="Romance">Romance</option>
+                <option value="Ficção científica">Ficção científica</option>
+            </select>
+
+            <p>Descrição</p>
+            <textarea placeholder="Descrição do filme..." name="descricao"></textarea>
+
+            <p>Duração (minutos)</p>
+            <input type="number" value="0" name="duracao">
+
+            <p>Ano de Lançamento</p>
+            <input type="number" value="2026" name="anoLancamento">
+
+            <p>Classificação Indicativa</p>
+            <select name="classificacao">
+                <option value="">Selecione...</option>
+                <option value="Livre">Livre</option>
+                <option value="10 anos">10 anos</option>
+                <option value="12 anos">12 anos</option>
+                <option value="14 anos">14 anos</option>
+                <option value="16 anos">16 anos</option>
+                <option value="18 anos">18 anos</option>
+            </select>
+            <p>foto</p>
+            <input type="file" name="foto" accept="image/png">
+            <br><br>
+
+            <button type="submit">Adicionar</button>
+            <button type="reset" onclick="window.history.back()">Cancelar</button>
+        </form>
+    </div>
+    </body>
+
+    </html>

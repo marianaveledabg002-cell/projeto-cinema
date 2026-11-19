@@ -1,0 +1,17 @@
+<%- include('../cabecalho')%>
+<div>
+    <h3>Alterar genêro</h3>
+    <form action="/genero/upd/<%= genero.id %>" method="POST">
+
+        <p>Nome do Gênero</p>
+        <input type="text" placeholder="Ex: Ação, Comédia, Drama..." name="nome" value="<%=genero.nome%>">
+        <br><br>
+        <p>Descrição</p>
+        <input type="text" placeholder="Descrição do gênero..." name="descricao" value="<%= genero.id %>">
+        <br><br>
+        <button type="submit">Adicionar</button>
+        <button type="reset" onclick="window.history.back()">Cancelar</button>
+    </form>
+</div>
+</body>
+</html>

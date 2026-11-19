@@ -1,0 +1,61 @@
+<%- include('../cabecalho')%>
+
+    <div>
+        <h3>Filmes do Catálogo</h3>
+        <p>Gerencie os filmes cadastrados</p>
+        <a href="/filme/add">+ Novo Filme</a><br><br>
+
+       <form action="/filme/pesquisa" method="post">
+    <input type="text" name="pesquisar" placeholder="Pesquisar filme...">
+    <button type="submit">Pesquisar</button>
+  <button href="/filme">Limpar pesquisa</button>
+</form>
+        <table>
+            <tr>
+                <td>Nome</td>
+                <td>Gênero</td>
+                <td>
+                    <h3>Duração</h3>
+                </td>
+                <td>
+                    <h3>Lançamento</h3>
+                </td>
+                 <td>
+                    <h3>Classificação</h3>
+                </td>
+                <td>Foto</td>
+                <td>
+                    <h3>Ações</h3>
+                </td>
+            </tr>
+            <% filmes.forEach(filme=>{%>
+                <tr>
+                    <td>
+                        <%=filme.nome%>
+                    </td>
+                    <td>
+                        <%=filme.genero%>
+                    </td>
+                    <td>
+                        <%=filme.duracao%> min
+                    </td>
+                    <td>
+                        <%=filme.anoLancamento%>
+                    </td>
+                    <td>
+                        <%=filme.classificacao%>
+                    </td>
+                     <td>
+    <img src="/filme/foto/<%= filme.id %>" width="100">
+</td>
+                    <td>
+                        <a href="/filme/upd/<%=filme.id%>">✏️</a>
+                        <a href="/filme/del/<%=filme.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    </body>
+
+    </html>

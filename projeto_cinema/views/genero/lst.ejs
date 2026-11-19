@@ -1,0 +1,46 @@
+<%- include('../cabecalho')%>
+
+    <div>
+        <h3>Gêneros de Filmes</h3>
+        <p>Gerencie os gêneros cadastrados no catálogo</p>
+        <a href="/genero/add">+ Novo Gênero</a><br><br>
+        
+        <form action="/genero/pesquisa" method="POST">
+    <input type="text" name="pesquisar" placeholder="Pesquisar gênero...">
+    <button type="submit">Pesquisar</button>
+     <button href="/genero">Limpar pesquisa</button>
+</form>
+        <table>
+            <tr>
+                <td>
+                    <h3>Nome do Gênero</h3>
+                </td>
+                <td>
+                    <h3>Descrição</h3>
+                </td>
+                <td>
+                    <h3>Ações</h3>
+                </td>
+            </tr>
+            <% generos.forEach(genero=>{%>
+                <tr>
+                    <td>
+                        <p>🎬 <%=genero.nome%>
+                        </p>
+                    </td>
+                    <td>
+                        <p>🍿 <%=genero.descricao%>
+                        </p>
+                    </td>
+
+                    <td>
+                        <a href="/genero/upd/<%=genero.id%>">✏️</a>
+                        <a href="/genero/del/<%=genero.id%>">🗑️</a>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    </body>
+
+    </html>

@@ -1,0 +1,16 @@
+<%- include('../cabecalho')%>
+<div>
+    <h3>Novo Gênero</h3>
+    <form action="/genero/add" method="POST" >
+        <p>Nome do Gênero</p>
+        <input type="text" placeholder="Ex: Ação, Comédia, Drama..." name="nome">
+        <br><br>
+        <p>Descrição</p>
+        <input type="text" placeholder="Descrição do gênero..." name="descricao">
+        <br><br>
+        <button type="submit">Adicionar</button>
+        <button type="reset" onclick="window.history.back()">Cancelar</button>
+    </form>
+</div>
+</body>
+</html>
